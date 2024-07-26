@@ -1,0 +1,639 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap);
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root{
+    --text-color: #0f0f0f;
+    --text-color-projects: #f2f2f2;
+    --hover-color: #3a3d40;
+    --background-color: #F2F0EF;
+    --header-footer: #e6e0c8;
+}
+
+html {
+  box-sizing: border-box;
+
+  /* Set font size for easy rem calculations
+   * default document font size = 16px, 1rem = 16px, 100% = 16px
+   * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+  */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+}
+
+html, body{
+    overflow: auto;
+}
+
+
+/* NAVBAR */
+    #navbar {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 95px;
+        background: var(--header-footer);
+        z-index: 9;
+    }
+
+    #navbar ul {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        padding: 0 2rem;
+    }
+
+    #navbar li {
+        margin: 0 20px;
+    }
+
+    #navbar a{
+        text-decoration: none;
+        color: var(--text-color);
+        display: block;
+        font-size: 2.2rem;
+        font-weight: 900;
+        padding: 2rem;
+    }
+
+    #navbar a:hover{
+        font-size: 2.5rem;
+        color: lightgreen;
+        background-color: var(--hover-color);
+    }
+
+/* END-NAVBAR */
+
+/* WELCOME */
+#welcome-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        color: var(--text-color);
+    }
+    
+    #welcome-section h1{
+        font-size: 6rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    #welcome-section p {
+        font-size: 3rem;
+        font-weight: 600;
+        font-style: italic;
+        color: rgb(126, 0, 36);
+        margin: 0 4rem;
+    }
+
+/* END WELCOME */
+
+/* ABOUT */
+
+    #about{
+        background-color: #ffffff;
+    }
+
+    #about h1{
+        font-size: 6rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    #about-me {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        background-color: #ffffff;
+        gap: 2rem;
+    }
+    
+    #about-me-text {
+        max-width: 50%;
+        text-align: left;
+        margin-left: 10rem;
+    }
+    
+    #about-me-text p {
+        font-size: 3rem;
+        line-height: 1.5;
+        color: var(--text-color);
+    }
+    
+    #about-me-text #resume-button {
+        display: inline-block;
+        margin-top: 2rem;
+        padding: 2rem 1rem;
+        font-size: 2rem;
+        text-decoration: none;
+        color: #fff;
+        background-color: #3a3d40;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    
+    #about-me-text #resume-button:hover {
+        background-color: #2a2d30;
+    }
+    
+    #about-me-image img {
+        width: 60%;
+        margin-left: 20rem;
+        height: auto;
+        border-radius: 50%;
+        margin-bottom: 12rem;
+    }
+
+
+/* END-ABOUT */
+
+
+/* Education Timeline */
+
+#timeline h1{
+    font-size: 6rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.timeline {
+    position: relative;
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 15px 0;
+  }
+  
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: #006E51;
+    top: 0;
+    bottom:0;
+    left: 50%;
+    margin-left: -1px;
+  }
+  
+  .container {
+    padding: 15px 30px;
+    position: relative;
+    background: inherit;
+    width: 50%;
+  }
+  
+  .container.left {
+    left: 0;
+  }
+  
+  .container.right {
+    left: 50%;
+  }
+  
+  .container::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: calc(50% - 8px);
+    right: -8px;
+    background: #ffffff;
+    border: 2px solid #006E51;
+    border-radius: 16px;
+    z-index: 1;
+  }
+  
+  .container.right::after {
+    left: -8px;
+  }
+  
+  .container::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    top: calc(50% - 1px);
+    right: 8px;
+    background: #006E51;
+    z-index: 1;
+  }
+  
+  .container.right::before {
+    left: 8px;
+  }
+  
+  .container .date {
+    position: absolute;
+    display: inline-block;
+    top: calc(50% - 8px);
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #006E51;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 1;
+  }
+  
+  .container.left .date {
+    right: -90px;
+  }
+  
+  .container.right .date {
+    left: -80px;
+  }
+  
+  .container .icon {
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    padding: 9px 0;
+    top: calc(50% - 20px);
+    background: #F6D155;
+    border: 2px solid #006E51;
+    border-radius: 40px;
+    text-align: center;
+    font-size: 18px;
+    color: #006E51;
+    z-index: 1;
+  }
+  
+  .container.left .icon {
+    right: 56px;
+  }
+  
+  .container.right .icon {
+    left: 56px;
+  }
+  
+  .container .content {
+    padding: 30px 90px 30px 30px;
+    background: #F6D155;
+    position: relative;
+    border-radius: 0 500px 500px 0;
+  }
+  
+  .container.right .content {
+    padding: 30px 30px 30px 90px;
+    border-radius: 500px 0 0 500px;
+  }
+  
+  .container .content h2 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: normal;
+    color: #006E51;
+  }
+  
+  .container .content p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+  }
+
+/* End Education Timeline */
+
+
+/* PROJECT */
+    
+    #projects {
+        padding: 20px;
+        background: #ffffff;
+    }
+    
+    #projects h2 {
+        text-align: center;
+        margin-bottom: 7rem;
+        font-size: 6rem;
+        color: var(--text-color);
+        text-decoration: underline;
+    }
+    
+    .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
+        grid-gap: 4rem;
+        max-width: 1280px;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+    
+    .project-tile {
+        position: relative;
+        background: grey;
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        border-radius: 2px;
+    }
+    
+    .project-tile img {
+        width: 100%;
+        height: calc(100% - 4.3rem);
+        display:block;
+        object-fit: cover;
+    }
+    
+    .project-title {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: var(--text-color-projects);
+        box-sizing: border-box;
+        padding: 10px;
+        font-weight: bold;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.766);
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .project-tile:hover .overlay {
+        opacity: 1;
+    }
+    
+    .overlay p {
+        color: var(--text-color-projects);
+        margin:0 15px 15px 15px;
+        text-align: justify;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    
+/* END-PROJECT */
+
+/* SOCIALS */
+
+    #socials {
+        margin-top: 50px;
+        text-align: center;
+        margin-bottom: 8rem;
+    }
+    
+    #socials h2 {
+        font-size: 6rem;
+        margin-bottom: 8rem;
+    }
+    
+    .social-icons {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .social-icons #profile-link {
+        display: inline-block;
+        margin: 0 10px;
+        color: var(--text-color);
+        font-size: 5.5rem;
+        text-decoration: none;
+        transition: transform 0.3s;
+    }
+    
+    .social-icons a:hover {
+        color: var(--hover-color);
+        transform: scale(1.5) rotate(360deg);
+    }
+
+/* END- SOCIALS */
+
+/* FOOTER */
+
+    footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        background-color: var(--header-footer);
+        font-size: 2rem;
+        font-weight: 590;
+        text-align: center;
+        color:var(--text-color);
+    }
+
+    footer a .fa-github {
+        font-size: 4rem;
+        text-decoration: none;
+        transition: transform 0.3s;
+        color: var(--text-color);
+    }
+
+    footer a .fa-github:hover {
+        color: var(--hover-color);
+        transform: scale(1.2) rotate(360deg);
+    }
+
+/* END-FOOTER */
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+
+    #about-me {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    #about-me-text {
+        max-width: 80%;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    #about-me-text p {
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    #about-me-image img {
+        width: 50%;
+        margin-left: 0;
+        margin-bottom: 2rem;
+    }
+
+    #about-me-text #resume-button {
+        font-size: 1.5rem;
+        padding: 1.5rem 1rem;
+    }
+
+    .timeline::after {
+        left: 90px;
+    }
+
+    .container {
+        width: 70%;
+        padding-left: 120px;
+        padding-right: 30px;
+    }
+
+    .container.right {
+        left: 0%;
+    }
+
+    .container.left::after, 
+        .container.right::after {
+        left: 82px;
+    }
+
+    .container.left::before,
+        .container.right::before {
+        left: 100px;
+        border-color: transparent #006E51 transparent transparent;
+    }
+    
+    .container.left .date,
+    .container.right .date {
+        right: auto;
+        left: 15px;
+    }
+
+    .container.left .icon,
+    .container.right .icon {
+        right: auto;
+        left: 146px;
+    }
+
+    .container.left .content,
+    .container.right .content {
+        padding: 30px 30px 30px 90px;
+        border-radius: 500px 0 0 500px;
+    }
+
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    #projects h2 {
+      font-size: 3rem;
+    }
+  
+    .project-title {
+      font-size: 1.2rem;
+    }
+  
+    .overlay p {
+      font-size: 1.2rem;
+    }
+
+    #socials h2 {
+        font-size: 4rem;
+    }
+        
+    .social-icons #profile-link {
+        font-size: 3.5rem;
+    }
+
+    footer{
+        font-size:1.5rem
+    }
+
+    footer a .fa-github {
+        font-size: 3rem;
+    }
+  }
+
+@media only screen and (max-width: 450px){
+    #navbar ul{
+        padding: 0 1.5rem;
+    }
+
+    #navbar li{
+        margin: 0 10px
+    }
+
+    #navbar a{
+        font-size: 1.6rem;
+        padding: 2rem 0.6rem;
+    }
+
+    #welcome-section, #timeline, #about h1{
+        font-size:5rem;
+    }
+
+    #welcome-section p{
+        font-size: 2.5rem;
+    }
+
+    .overlay p {
+        font-size: 0.9rem;
+      }
+
+    #socials h2 {
+        font-size: 3rem;
+      }
+      
+    .social-icons #profile-link {
+        font-size: 2.5rem;
+    }
+
+    footer{
+        font-size:1.2rem
+    }
+
+    footer a .fa-github {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 300px){
+    #welcome-section, #timeline,#about h1{
+        font-size: 3.5rem;
+    }
+
+    #welcome-section p{
+        font-size: 2rem;
+    }
+
+    .overlay p {
+        font-size: 0.7rem;
+      }
+    
+    #socials h2 {
+        font-size: 2rem;
+    }
+    
+    .social-icons #profile-link {
+        font-size: 1.5rem;
+    }
+
+    footer{
+        font-size:0.9rem
+    }
+
+    footer a .fa-github {
+        font-size: 1.6rem;
+    }
+}
+/* END-MEDIA QUERIES */
